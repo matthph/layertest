@@ -2,13 +2,11 @@ import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as python from '@aws-cdk/aws-lambda-python-alpha';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
-//import * as AWS from ('aws-sdk');
 import * as https from 'https';
 import * as fs from 'fs';
 
 const AWS = require('aws-sdk');
 
-// import { Bundling } from '../node_modules/@aws-cdk/aws-lambda-python-alpha/lib/bundling';
 
 export class LayertestStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -24,8 +22,9 @@ export class LayertestStack extends cdk.Stack {
      ],
      bundling: {
          buildArgs: {
-             PIP_INDEX_URL: "http://pypi.org/"
-         }
+             PIP_INDEX_URL: "https://pypi.org/"
+         },
+        //  network: 'host'
      }
    });
   }  
