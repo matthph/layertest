@@ -22,9 +22,9 @@ export class LayertestStack extends cdk.Stack {
      ],
      bundling: {
          buildArgs: {
-             PIP_INDEX_URL: "https://pypi.org/"
+             PIP_INDEX_URL: "https://pypi.python.org/simple/"
          },
-        //  network: 'host'
+     network: 'host'
      }
    });
   }  
